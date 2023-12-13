@@ -2,7 +2,7 @@ public class Pokemon {
     private int number;
     private String name;
     private byte level;
-    private Hability[] habilities;
+    //private Hability[] habilities;
     private Type[] type;
     private float price;
     private byte boost;
@@ -10,9 +10,7 @@ public class Pokemon {
     private Pokemon evolution;
     private String description;
     private boolean shiny;
-
-    
-
+ 
     public Pokemon(int number, String name, byte level, Type[] type, float price, byte boost, String description, boolean shiny) {
         this.number = number;
         this.name = name;
