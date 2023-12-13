@@ -4,7 +4,8 @@ public class Home{
         System.out.println("New pokemon: ");
 
         Type[] t = {Type.GRASS, Type.POISON};
-        Pokemon p = new Pokemon
+        Hability[] h = {Hability.HEADBUTT};
+        Pokemon venusaur = new Pokemon
             (
                 3
                 , "Venusaur"
@@ -15,8 +16,12 @@ public class Home{
                 , "Há uma grande flor nas costas do Venusaur. Diz-se que a flor adquire cores vivas, caso receba muita nutrição e luz solar. O aroma da flor acalma as emoções das pessoas."
                 , true
             );
-            
-            Pokemon p2 = new Pokemon
+        venusaur.setHabilities(h);
+        venusaur.seePokemon();
+        
+       
+
+        Pokemon ivysaur = new Pokemon
             (
                 2
                 , "Ivysaur"
@@ -27,10 +32,11 @@ public class Home{
                 , "Há uma grande flor nas costas do Venusaur. Diz-se que a flor adquire cores vivas, caso receba muita nutrição e luz solar. O aroma da flor acalma as emoções das pessoas."
                 , true
             );
-            p2.setEvolution(p);
+        ivysaur.setEvolution(venusaur);
+        ivysaur.setHabilities(h);
+        ivysaur.seePokemon();
         
-            MyFile.writePokemon(p);
-            MyFile.writePokemon(p2);
-
+        ivysaur.savePokemon();
+        venusaur.savePokemon();
     }
 }
