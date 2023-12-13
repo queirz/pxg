@@ -4,7 +4,7 @@ public class MyFile {
     private static final String MOVES_FILE = "moves.md";
     private static final String POKEMONS_FILE = "pokemons.md";
 
-    public static void writeMove(Move m){
+    /*public static void writeMove(Move m){
         File arquivo = new File(MOVES_FILE);
 
         try {
@@ -31,7 +31,7 @@ public class MyFile {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-    }
+    }*/
 
     public static void writePokemon(Pokemon p){
         File arquivo = new File(POKEMONS_FILE);
@@ -45,17 +45,17 @@ public class MyFile {
             FileWriter fw = new FileWriter(arquivo, true);
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(
-                    p.getNumber() + "<;>" 
-                    + p.getName() + "<;>"
-                    + p.getLevel() + "<;>"
-                    + p.getHabilities() + "<;>"
-                    + p.getType() + "<;>"
-                    + p.getPrice() + "<;>"
-                    + p.getBoost() + "<;>"
-                    + p.getWeakness() + "<;>"
-                    + p.getEvolution() + "<;>"
-                    + p.getDescription() + "<;>"
-                    + p.hasShiny() + "<;>"
+                      p.getNumber()         + "<;>" 
+                    + p.getName()           + "<;>"
+                    + p.getLevel()          + "<;>"
+                    + p.getHabilitiesinString() + "<;>"
+                    + p.getTypeInString()   + "<;>"
+                    + p.getPrice()          + "<;>"
+                    + p.getBoost()          + "<;>"
+                    + p.getWeakness()       + "<;>"
+                    + p.getEvolutionID()      + "<;>"
+                    + p.getDescription()    + "<;>"
+                    + p.hasShiny()          + "<;>"
             );
             bw.newLine();
             bw.close();

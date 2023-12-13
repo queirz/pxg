@@ -24,13 +24,26 @@ public class Pokemon {
         this.description = description;
         this.shiny = shiny;
     }
+    public Pokemon(int number, String name, byte level, Hability[] habilities, Type[] type, float price, byte boost, String description, boolean shiny) {
+        this.number = number;
+        this.name = name;
+        this.level = level;
+        this.habilities = habilities;
+        this.type = type;
+        this.price = price;
+        this.boost = boost;
+        this.weakness = null;
+        this.evolution = null;
+        this.description = description;
+        this.shiny = shiny;
+    }
 
     // Métodos de integridade - GET
     public int          getNumber()             { return number;                                          }
     public String       getName()               { return name;                                            }
     public byte         getLevel()              { return level;                                           }
     public Hability[]   getHabilities()         { return habilities;                                      }
-    public String       getHabilitiesinStrng()  {
+    public String       getHabilitiesinString() {
         String s = "";
         
         for(Hability h: this.habilities) { s += h.name(); s += "-"; }
@@ -70,7 +83,7 @@ public class Pokemon {
     public void seePokemon() {
         System.out.println("#" + getNumber() + ": " + getName());
         System.out.println("É do tipo:" + getTypeInString());
-        System.out.println("Habilidades:" + getHabilitiesinStrng());
+        System.out.println("Habilidades:" + getHabilitiesinString());
         if(getEvolutionID() != 0) System.out.println("Sua evolução é " + getEvolution().getName() + ".");
         System.out.println("Tem nível " + getLevel() + " e preço $" + getPrice() + ".");
         System.out.println(getDescription());
@@ -83,6 +96,7 @@ public class Pokemon {
                     getNumber(),
                     getName(),
                     getLevel(),
+                    getHabilities(),
                     getType(),
                     getPrice(),
                     getBoost(),

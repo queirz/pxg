@@ -18,9 +18,7 @@ public class Home{
             );
         venusaur.setHabilities(h);
         venusaur.seePokemon();
-        
        
-
         Pokemon ivysaur = new Pokemon
             (
                 2
