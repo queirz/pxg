@@ -1,4 +1,7 @@
-public enum Hability {
+import java.nio.file.NotLinkException;
+
+public static enum Hability {
+    NONE         ( (byte)  0, "NONE"        ),
     CUT          ( (byte)  1, "CUT"         ),
     DIG          ( (byte)  2, "DIG"         ),
     LIGHT        ( (byte)  3, "LIGHT"       ),
@@ -10,6 +13,7 @@ public enum Hability {
     TELEPORT     ( (byte)  9, "TELEPORT"    ),
     CONTROLMINDS ( (byte) 10, "CONTROLMINDS"),
     BLINK        ( (byte) 11, "BLINK"       );
+    
 
     private final byte id;
     private final String name;
@@ -19,23 +23,22 @@ public enum Hability {
         this.name = name;
     }
 
-    public static byte value(String s) {
+    public Hability value(String s) {
         byte id = (byte) 0;
         switch (s) {
-            case "CUT":          id = CUT.id;          break;
-            case "DIG":          id = DIG.id;          break;
-            case "LIGHT":        id = LIGHT.id;        break;
-            case "ROCKSMASH":    id = ROCKSMASH.id;    break;
-            case "HEADBUTT":     id = HEADBUTT.id;     break;
-            case "RIDE":         id = RIDE.id;         break;
-            case "SURF":         id = SURF.id;         break;
-            case "FLY":          id = FLY.id;          break;
-            case "TELEPORT":     id = TELEPORT.id;     break;
-            case "CONTROLMINDS": id = CONTROLMINDS.id; break;
-            case "BLINK":        id = BLINK.id;        break;
+            case "CUT":          return Hability.CUT;          break;
+            case "DIG":          return Hability.DIG;          break;
+            case "LIGHT":        return Hability.LIGHT;        break;
+            case "ROCKSMASH":    return Hability.ROCKSMASH;    break;
+            case "HEADBUTT":     return Hability.HEADBUTT;     break;
+            case "RIDE":         return Hability.RIDE;         break;
+            case "SURF":         return Hability.SURF;         break;
+            case "FLY":          return Hability.FLY;          break;
+            case "TELEPORT":     return Hability.TELEPORT;     break;
+            case "CONTROLMINDS": return Hability.CONTROLMINDS; break;
+            case "BLINK":        return Hability.BLINK;        break;
+            default:             return Hability.NONE;         break;
         }
-
-        return id;
     }
 
     public static String value(byte id) {
