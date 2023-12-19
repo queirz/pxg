@@ -65,5 +65,38 @@ public class MyFile {
         }
     }
 
+    public Pokemon readPokemon(int id) {
+        Pokemon p = new Pokemon();
+        
+        try {
+            File arquivo = new File(POKEMONS_FILE);
+
+            FileReader fr = new FileReader(arquivo);
+            BufferedReader br = new BufferedReader(fr);
+            
+            //enquanto houver mais linhas
+            while (br.ready()) {
+                //lê a proxima linha
+                String linha = br.readLine();
+                String[] s = linha.split(";");
+                
+                p.setNumber(s[0]);
+                p.setName(s[1]);
+                p.setLevel(s[2]);
+                p.setHabilitiesInString(s[3]);
+                p.setType(s[4]);
+                p.setPrice(s[5]);
+                
+            }
+            
+            br.close();
+            fr.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        return p;
+    }
+
     
 }
