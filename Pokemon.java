@@ -71,6 +71,11 @@ public class Pokemon {
     public void setName(String name)                 { this.name = name;               }
     public void setLevel(byte level)                 { this.level = level;             }
     public void setHabilities(Hability[] habilities) { this.habilities = habilities;   }
+    public Hability[] setHabilitiesInString(String habilities) {
+        String s = habilities.split("-"); Hability [] hab = new Hability[s.length()];
+        for (int i = 0; i < s.length(); i++) { hab[i] = Hability.values(s);}
+        return hab;
+    }
     public void setType(Type[] type)                 { this.type = type;               }
     public void setPrice(float price)                { this.price = price;             }
     public void setBoost(byte boost)                 { this.boost = boost;             }
@@ -105,5 +110,11 @@ public class Pokemon {
                 )
         );
         System.out.println("Pokemon salvo.");
+    }
+
+    public void loadPokemon(int id){
+        Pokemon p = MyFile.readPokemon();
+        
+        setNumber(p.getNumber());
     }
 }
