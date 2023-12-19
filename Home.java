@@ -18,7 +18,8 @@ public class Home{
             );
         venusaur.setHabilities(h);
         venusaur.seePokemon();
-       
+
+        System.out.println("New pokemon: ");
         Pokemon ivysaur = new Pokemon
             (
                 2
@@ -36,5 +37,8 @@ public class Home{
         
         ivysaur.savePokemon();
         venusaur.savePokemon();
+
+        Pokemon p = new Pokemon();
+        p.readPokemon(1);
     }
 }
